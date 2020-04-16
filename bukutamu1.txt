@@ -1,0 +1,2 @@
+Fungsi $_GET pada syntax bukutamu1 berfungsi untuk mengambil atau menampilkan variabel yanga ada pada form sebelumnya. 
+contoh: $nama = $_GET['Nama'] ; variabel nama yang sudah dinputkan oleh user dan disimpan pada variabel $nama yang terdapat pada form yang sudah dibuat, tepatnya yaitu pada baris syntax Nama    : <input type="text" name="Nama">.

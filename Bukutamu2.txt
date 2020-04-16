@@ -1,0 +1,64 @@
+- Fungsi fopen() difungsikan hanya untuk membuka file saja, tidak untuk menjalankan proses pembacaan atau penulisan.
+
+<?php
+
+$file = "jumlah.txt";
+$open = fopen($file,"r+");
+...
+
+?>
+
+- fclose(file) digunakan untuk menutup file sesudah anda membuka file tersebut.
+
+<?php
+
+$file = "jumlah.txt";
+$open = fopen($file,"r+");
+$counter=fread($open,filesize($file));
+fclose($open);
+$counter++;
+$write=fopen($file,'w');
+fputs($write,$counter);
+fclose($write);
+
+?>
+
+- Fungsi fgets() di gunakan untuk membaca file dari satu baris ke baris berikutnya.
+
+<?php
+$file = "jumlah.txt";
+$fp = fopen($file,"r");
+
+if ($fp)
+{
+$baca = fgets($fp,50);
+print ("$baca");
+}
+fclose($fp);
+?>
+komentar<?php
+$file = "komentar.txt";
+$fp = fopen($file,"r");
+while (!feof($fp))
+{
+$baca = fgets($fp,50);
+print("$baca");
+}
+fclose($fp);
+?>
+
+-Loop For adalah perulangan yang termasuk dalam counted loop, karena kita bisa menentukan jumlah perulangannya.
+
+<?php
+...
+
+for ($i = 0; $i < 999; $i++)
+{
+fwrite ($fp, $comfile[$i]);
+}
+fclose ($fp);
+if ($_POST['submit']) {
+header ("location: index.php");
+}
+
+?>
